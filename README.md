@@ -1,10 +1,10 @@
 # Question Bank System_Django
 
 #### 介绍
-题库系统
+
 
 #### 软件架构
-软件架构说明
+![哈哈哈](./media/peng.jpg)
 
 
 #### 安装教程
