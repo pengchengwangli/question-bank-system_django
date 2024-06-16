@@ -149,6 +149,11 @@ STATIC_ROOT = BASE_DIR / 'collected_static'
 # 媒体文件
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+CKEDITOR_UPLOAD_PATH = 'ckeditor/'
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+# MEDIA_ROOT = BASE_DIR/'media'
+# MEDIA_URL = '/media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 # 2ddda921b760210c8fa42aaee8a9d51f
