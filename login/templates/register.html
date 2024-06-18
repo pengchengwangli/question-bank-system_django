@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>注册</title>
+{% endblock %}
+{% block css %}
+<style>
+        body, html {
+            height: 100%;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .form-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        #message {
+            display: none;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="form-container">
+            <h2 class="text-center mb-4">Register</h2>
+            <form id="registerForm">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username:</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                    <div class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="code" class="form-label">Verification Code:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="code" name="code" required>
+                        <button type="button" class="btn btn-primary" id="getCode">Get Code</button>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Register</button>
+            </form>
+            <div id="message" class="alert mt-3"></div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#getCode").click(function() {
+                const email = $("#email").val();
+                if (email) {
+                    $.ajax({
+                        url: '/send-code',
+                        type: 'POST',
+                        data: JSON.stringify({ email: email }),
+                        contentType: 'application/json',
+                        success: function(response) {
+                            $("#message").text(response.message).removeClass('alert-danger').addClass('alert alert-success').show();
+                        },
+                        error: function(jqXHR) {
+                            const error = jqXHR.responseJSON.message;
+                            $("#message").text(error).removeClass('alert-success').addClass('alert alert-danger').show();
+                        }
+                    });
+                } else {
+                    $("#message").text("Please enter a valid email address.").removeClass('alert-success').addClass('alert alert-warning').show();
+                }
+            });
+
+            $("#registerForm").submit(function(event) {
+                event.preventDefault();
+                const username = $("#username").val();
+                const email = $("#email").val();
+                const password = $("#password").val();
+                const code = $("#code").val();
+                $.ajax({
+                    url: '/register',
+                    type: 'POST',
+                    data: JSON.stringify({ username: username, email: email, password: password, code: code }),
+                    contentType: 'application/json',
+                    success: function(response) {
+                        $("#message").text(response.message).removeClass('alert-danger').addClass('alert alert-success').show();
+                    },
+                    error: function(jqXHR) {
+                        const error = jqXHR.responseJSON.message;
+                        $("#message").text(error).removeClass('alert-success').addClass('alert alert-danger').show();
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+{% endblock %}
+
