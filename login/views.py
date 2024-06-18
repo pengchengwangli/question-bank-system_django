@@ -1,6 +1,7 @@
 import json
 
 from django.contrib.auth.models import User
+from django.contrib.auth import login, logout, authenticate
 from django.shortcuts import render
 from django.template.loader import render_to_string
 from django_redis import get_redis_connection
@@ -15,10 +16,6 @@ def register(request):
     tips = ""
     if request.method == 'POST':
         print("注册开始")
-        # u = request.POST.get('username', '')
-        # p = request.POST.get('password', '')
-        # e = request.POST.get('email', '')
-        # c = request.POST.get('code', '')
         jsonn = json.loads(request.body)
         u = jsonn['username']
         p = jsonn['password']
@@ -51,6 +48,38 @@ def register(request):
             return JsonResponse(error)
 
     return render(request, 'register.html')
+
+
+def login_(request):
+    if request.method == 'POST':
+        json_text = request.body
+        json_dic = json.loads(json_text)
+        u = json_dic['username']
+        p = json_dic['password']
+        if User.objects.filter(username=u):
+            user = authenticate(username=u, password=p)
+            if user:
+                if user.is_active:
+                    login(request, user)
+                mess = {
+                    "success": True,
+                    "message": "登录成功正在跳转"
+                }
+                return JsonResponse(mess)
+            else:
+                error = {
+                    "success": False,
+                    "message": "用户名或密码错误"
+                }
+                return JsonResponse(error)
+        else:
+            error = {
+                "success": False,
+                "message": "用户名或密码错误"
+            }
+            return JsonResponse(error)
+
+    return render(request, 'login.html')
 
 
 def sms_code(request):
