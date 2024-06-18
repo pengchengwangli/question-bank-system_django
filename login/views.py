@@ -13,7 +13,6 @@ import random
 
 # Create your views here.
 def register(request):
-    tips = ""
     if request.method == 'POST':
         print("注册开始")
         jsonn = json.loads(request.body)
@@ -22,15 +21,17 @@ def register(request):
         e = jsonn['email']
         c = jsonn['code']
         conn = get_redis_connection()
-        value = conn.get(e).decode('utf-8')
+        value = conn.get(e)
+        if value:
+            value = value.decode('utf-8')
         print(value)
         # value = value.encode('utf-8')
 
         if value == c:
             if User.objects.filter(username=u):
                 error = {
-                    "alert-success": "用户已存在"
-
+                    "success": False,
+                    "message": "用户已存在!"
                 }
                 print("用户已存在")
 
@@ -38,11 +39,22 @@ def register(request):
             else:
                 user = User.objects.create_user(username=u, email=e, password=p, is_staff=1, is_superuser=1)
                 user.save()
+                id = User.objects.get(username=u).id
                 print("注册成功")
-                return JsonResponse({"alert-danger": "注册成功"})
+                return JsonResponse({
+                    "success": True,
+                    "message": "注册成功",
+                    "user": {
+                        "id": id,
+                        "username": u,
+                        "email": e
+                    }
+                }
+                )
         else:
             error = {
-                "alert-success": "验证码错误"
+                "success": False,
+                "message": "验证码错误!"
             }
             print("验证码错误")
             return JsonResponse(error)
@@ -102,7 +114,12 @@ def sms_code(request):
                       recipient_list=[email], html_message=codetemp)
         except:
             error = {
-                "alert-success": "未知错误"
+                "success": False,
+                "message": "发送验证码失败，请稍后再试"
             }
             return JsonResponse(error)
-        return JsonResponse({"alert-danger": "注册成功"})
+        return JsonResponse({
+            "success": True,
+            "message": "验证码已发送到您的邮箱"
+        }
+        )

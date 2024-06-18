@@ -93,7 +93,12 @@
                     data: JSON.stringify({ username: username, email: email, password: password, code: code }),
                     contentType: 'application/json',
                     success: function(response) {
-                        $("#message").text(response.message).removeClass('alert-danger').addClass('alert alert-success').show();
+                        if(response.success==false){
+                            $("#message").text(response.message).removeClass('alert-success').addClass('alert alert-danger').show();
+                        }else{
+                            $("#message").text(response.message).removeClass('alert-danger').addClass('alert alert-success').show();
+
+                        }
                     },
                     error: function(jqXHR) {
                         const error = jqXHR.responseJSON.message;
