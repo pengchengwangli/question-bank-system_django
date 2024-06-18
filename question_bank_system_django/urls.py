@@ -17,11 +17,12 @@ from django.contrib import admin
 from django.urls import path, re_path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from django.shortcuts import render
 from . import view
 from django.http import HttpResponseRedirect
 
 urlpatterns = [
-                  # path('', lambda request:HttpResponseRedirect("http://baidu.com"), name='index'),
+                  path('index/', lambda request:render(request,'index.html'), name='index'),
                   path('admin/', admin.site.urls),
                   path('login/', include('login.urls', namespace='login')),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # 媒体路由地址
