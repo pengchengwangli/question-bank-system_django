@@ -45,7 +45,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'question_bank_system_django.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-#数据库信息
+# 数据库信息
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -86,23 +86,23 @@ DATABASES = {
 
     }
 }
-#redis 信息
+# redis 信息
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://193.246.161.58", # 安装redis的主机的 IP 和 端口
+        "LOCATION": "redis://193.246.161.58:6379",  # 安装redis的主机的 IP 和 端口
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
             "CONNECTION_POOL_KWARGS": {
                 "max_connections": 1000,
                 "encoding": 'utf-8'
             },
-            "PASSWORD": "a**b**c**123321" # redis密码
+            "PASSWORD": "a**b**c**123321"  # redis密码
         }
     },
 
 }
-#smtp邮件服务
+# smtp邮件服务
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.qq.com'
 EMAIL_PORT = 465

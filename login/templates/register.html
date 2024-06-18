@@ -64,7 +64,7 @@
                 const email = $("#email").val();
                 if (email) {
                     $.ajax({
-                        url: '/send-code',
+                        url: '/login/smsemail/',
                         type: 'POST',
                         data: JSON.stringify({ email: email }),
                         contentType: 'application/json',
@@ -88,7 +88,7 @@
                 const password = $("#password").val();
                 const code = $("#code").val();
                 $.ajax({
-                    url: '/register',
+                    url: '/login/register/',
                     type: 'POST',
                     data: JSON.stringify({ username: username, email: email, password: password, code: code }),
                     contentType: 'application/json',
