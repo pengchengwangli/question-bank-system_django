@@ -22,6 +22,7 @@ from . import view
 from django.http import HttpResponseRedirect
 
 urlpatterns = [
+                  path('', view.index,name='index'),
                   path('index/', lambda request:render(request,'index.html'), name='index'),
                   path('admin/', admin.site.urls),
                   path('login/', include('login.urls', namespace='login')),
