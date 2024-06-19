@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>登录</title>
+{% endblock %}
+{% block css %}
+    <style>
+        body, html {
+            height: 100%;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .form-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        .form-title {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+<div class="container">
+        <div class="form-container">
+            <h2 class="form-title">登录</h2>
+            <form id="loginForm">
+                <div class="mb-3">
+                    <label for="username" class="form-label">用户名:</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">密码:</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">登录</button>
+            </form>
+            <div class="text-center mt-3">
+                <p>还没有账号？ <a href="/login/register" class="btn btn-link">立即注册</a></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginForm = document.getElementById('loginForm');
+            loginForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+
+                // 在这里添加您自己的登录逻辑，例如发送AJAX请求到服务器
+                console.log(`用户名: ${username}, 密码: ${password}`);
+
+                // 示例AJAX请求（使用Fetch API）
+                fetch('/login/login/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username: username, password: password })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // 登录成功后的处理，例如跳转到主页
+                        window.location.href = '{% url 'index' %}';
+                    } else {
+                        // 显示错误信息
+                        alert('登录失败: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        });
+    </script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+{% endblock %}
