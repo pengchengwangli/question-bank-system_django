@@ -12,7 +12,7 @@ from django.http import HttpResponse, JsonResponse
 from django.core.mail import send_mail
 # from django.conf import settings
 # import captcha
-from utils.codeget import check_code
+# from utils.codeget import check_code
 from django.http import FileResponse
 from captcha.models import CaptchaStore
 import random
@@ -27,6 +27,12 @@ def register(request):
         p = jsonn['password']
         e = jsonn['email']
         c = jsonn['code']
+        cap = jsonn['captcha']
+        hashkey = jsonn['hashkey']
+        code = CaptchaStore.objects.filter(hashkey=hashkey)
+        if (not code) or code[0].response != cap:
+            return JsonResponse({"success": False,
+                                 "message": "图片验证码错误!"})
         conn = get_redis_connection()
         value = conn.get(e)
         if value:
@@ -35,6 +41,12 @@ def register(request):
         # value = value.encode('utf-8')
 
         if value == c:
+            if User.objects.filter(email=e):
+                error = {
+                    "success": False,
+                    "message": "邮箱已存在!"
+                }
+                return JsonResponse(error)
             if User.objects.filter(username=u):
                 error = {
                     "success": False,
@@ -65,8 +77,9 @@ def register(request):
             }
             print("验证码错误")
             return JsonResponse(error)
-
-    return render(request, 'register.html')
+    hashkey = CaptchaStore.generate_key()
+    image_url = captcha_image_url(hashkey)
+    return render(request, 'register.html', {'hashkey': hashkey, 'image_url': image_url})
 
 
 def login_(request):

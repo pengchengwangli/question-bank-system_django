@@ -4,16 +4,18 @@
     <title>注册</title>
 {% endblock %}
 {% block css %}
-<style>
+    <style>
         body, html {
             height: 100%;
         }
+
         .container {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100%;
         }
+
         .form-container {
             background: #fff;
             padding: 30px;
@@ -22,6 +24,7 @@
             max-width: 400px;
             width: 100%;
         }
+
         #message {
             display: none;
         }
@@ -52,6 +55,14 @@
                         <button type="button" class="btn btn-primary" id="getCode">获取验证码</button>
                     </div>
                 </div>
+                <div class="mb-3">
+                    <label for="captcha" class="form-label">图片验证码：</label>
+                    <div class="d-flex">
+                        <input type="text" class="form-control me-2" id="captcha" name="captcha" required>
+                        <input value="{{ hash_key }}" name="hashkey" type="hidden" id="id_captcha_0">
+                        <a href="#" class="captcha"><img src="{{ image_url }}" alt="点击换一张" id="id_captcha"></a>
+                    </div>
+                </div>
                 <button type="submit" class="btn btn-success w-100">点击注册</button>
             </form>
             <div id="message" class="alert mt-3"></div>
@@ -59,19 +70,28 @@
     </div>
 
     <script>
-        $(document).ready(function() {
-            $("#getCode").click(function() {
+
+        $(document).ready(function () {
+            $('.captcha').click(function () {
+                $.getJSON("{% url 'api:captcha' %}", function (result) {
+                    $('#id_captcha').attr('src', result['image_url']);
+                    $('#id_captcha_0').val(result['hashkey'])
+                });
+            });
+        });
+        $(document).ready(function () {
+            $("#getCode").click(function () {
                 const email = $("#email").val();
                 if (email) {
                     $.ajax({
                         url: '/login/smsemail/',
                         type: 'POST',
-                        data: JSON.stringify({ email: email }),
+                        data: JSON.stringify({email: email}),
                         contentType: 'application/json',
-                        success: function(response) {
+                        success: function (response) {
                             $("#message").text(response.message).removeClass('alert-danger').addClass('alert alert-success').show();
                         },
-                        error: function(jqXHR) {
+                        error: function (jqXHR) {
                             const error = jqXHR.responseJSON.message;
                             $("#message").text(error).removeClass('alert-success').addClass('alert alert-danger').show();
                         }
@@ -81,26 +101,28 @@
                 }
             });
 
-            $("#registerForm").submit(function(event) {
+            $("#registerForm").submit(function (event) {
                 event.preventDefault();
                 const username = $("#username").val();
                 const email = $("#email").val();
                 const password = $("#password").val();
                 const code = $("#code").val();
+                const captcha = $("#id_captcha").val();
+                const hashkey = $("#id_captcha_0").val();
                 $.ajax({
                     url: '/login/register/',
                     type: 'POST',
-                    data: JSON.stringify({ username: username, email: email, password: password, code: code }),
+                    data: JSON.stringify({username: username, email: email, password: password, code: code,captcha:captcha,hashkey:hashkey }),
                     contentType: 'application/json',
-                    success: function(response) {
-                        if(response.success==false){
+                    success: function (response) {
+                        if (response.success == false) {
                             $("#message").text(response.message).removeClass('alert-success').addClass('alert alert-danger').show();
-                        }else{
+                        } else {
                             $("#message").text(response.message).removeClass('alert-danger').addClass('alert alert-success').show();
 
                         }
                     },
-                    error: function(jqXHR) {
+                    error: function (jqXHR) {
                         const error = jqXHR.responseJSON.message;
                         $("#message").text(error).removeClass('alert-success').addClass('alert alert-danger').show();
                     }
