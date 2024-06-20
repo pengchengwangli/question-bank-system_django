@@ -5,6 +5,7 @@ from captcha.helpers import captcha_image_url
 from captcha.models import CaptchaStore
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
+from django.db.models import QuerySet
 from django.shortcuts import render
 from django.template.loader import render_to_string
 from django_redis import get_redis_connection
@@ -27,17 +28,21 @@ def register(request):
         p = jsonn['password']
         e = jsonn['email']
         c = jsonn['code']
-        cap = jsonn['captcha']
+        cap: str = jsonn['captcha']
         hashkey = jsonn['hashkey']
-        code = CaptchaStore.objects.filter(hashkey=hashkey)
-        if (not code) or code[0].response != cap:
+        # print(cap)
+        code: QuerySet = CaptchaStore.objects.filter(hashkey=hashkey)
+        if (code.count() == 0) or code[0].response != cap.lower():
+            # print(code, code[0].response)
+            # print(code.count())
+            # print(code[0].response,cap)
             return JsonResponse({"success": False,
                                  "message": "图片验证码错误!"})
         conn = get_redis_connection()
         value = conn.get(e)
         if value:
             value = value.decode('utf-8')
-        print(value)
+        # print(value)
         # value = value.encode('utf-8')
 
         if value == c:
@@ -90,7 +95,9 @@ def login_(request):
         imgcode = json_dic['captcha']
         hashkey = json_dic['hashkey']
         _code = CaptchaStore.objects.filter(hashkey=hashkey)
-        if (not _code) or _code[0].response != imgcode.lower():
+        print(_code)
+        print(imgcode)
+        if len(_code) == 0 or _code[0].response.lower() != imgcode.lower():
             mess = {
                 "success": False,
                 "message": "图片验证码错误"
@@ -157,9 +164,32 @@ def sms_code(request):
         )
 
 
-def getcode(request):
-    img, code = check_code()
-    from io import BytesIO
-    stream = BytesIO()
-    img.save(stream, 'png')
-    return HttpResponse(stream.getvalue())
+def repass(request):
+    return render(request, 'repassword.html')
+
+
+def verify_code(request):
+    if request.method == "POST":
+        json_dic = json.loads(request.body)
+        email = json_dic['email']
+        code = json_dic['code']
+        passwd = json_dic['password']
+        user = User.objects.filter(email=email)
+        conn = get_redis_connection()
+        _code = conn.get(email)
+        if (not user.count()) or (not _code) or code != _code.decode('utf-8'):
+            error = {
+                "success": False,
+                "message": "验证码错误"
+            }
+            return JsonResponse(error)
+        else:
+            user_ = User.objects.get(email=email)
+            user_.set_password(passwd)
+            user_.save()
+            # user[0].set_password(passwd)
+            # user[0].save()
+            return JsonResponse({
+                "success": True,
+                "message": "密码修改成功!"
+            })

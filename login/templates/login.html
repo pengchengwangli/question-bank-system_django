@@ -7,6 +7,7 @@
     <style>
         body, html {
             height: 100%;
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
         }
 
         .container {
@@ -56,7 +57,8 @@
                 <button type="submit" class="btn btn-primary w-100">登录</button>
             </form>
             <div class="text-center mt-3">
-                <p>还没有账号？ <a href="/login/register" class="btn btn-link">立即注册</a></p>
+                 <a href="/login/register" class="btn btn-link">立即注册</a>
+                <a href="/login/repass" class="btn btn-link">立即找回</a>
             </div>
         </div>
     </div>
@@ -69,7 +71,7 @@
                 });
             });
         });
-
+{#303 309#}
         document.addEventListener('DOMContentLoaded', function () {
             const loginForm = document.getElementById('loginForm');
             loginForm.addEventListener('submit', function (event) {
@@ -80,7 +82,7 @@
                 const hashkey = document.getElementById('id_captcha_0').value;
 
                 // 在这里添加您自己的登录逻辑，例如发送AJAX请求到服务器
-                console.log(`用户名: ${username}, 密码: ${password},验证码：${captcha},验证码id: ${hashkey}`);
+                {#console.log(`用户名: ${username}, 密码: ${password},验证码：${captcha},验证码id: ${hashkey}`);#}
 
                 // 示例AJAX请求（使用Fetch API）
                 fetch('/login/login/', {

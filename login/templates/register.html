@@ -7,6 +7,7 @@
     <style>
         body, html {
             height: 100%;
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
         }
 
         .container {
@@ -107,7 +108,7 @@
                 const email = $("#email").val();
                 const password = $("#password").val();
                 const code = $("#code").val();
-                const captcha = $("#id_captcha").val();
+                const captcha = $("#captcha").val();
                 const hashkey = $("#id_captcha_0").val();
                 $.ajax({
                     url: '/login/register/',
@@ -115,7 +116,7 @@
                     data: JSON.stringify({username: username, email: email, password: password, code: code,captcha:captcha,hashkey:hashkey }),
                     contentType: 'application/json',
                     success: function (response) {
-                        if (response.success == false) {
+                        if (response.success === false) {
                             $("#message").text(response.message).removeClass('alert-success').addClass('alert alert-danger').show();
                         } else {
                             $("#message").text(response.message).removeClass('alert-danger').addClass('alert alert-success').show();
@@ -124,7 +125,12 @@
                     },
                     error: function (jqXHR) {
                         const error = jqXHR.responseJSON.message;
-                        $("#message").text(error).removeClass('alert-success').addClass('alert alert-danger').show();
+                        if( jqXHR.success===false){
+                            $("#message").text(jqXHR.message).removeClass('alert-success').addClass('alert alert-danger').show();
+                        }else{
+                            $("#message").text(error).removeClass('alert-success').addClass('alert alert-danger').show();
+                        }
+
                     }
                 });
             });

@@ -8,7 +8,9 @@ urlpatterns = [
     path('register/', views.register, name='reg'),
     path('smsemail/', views.sms_code, name='code'),
     path('login/', views.login_, name='login'),
-    path('captcha/', include('captcha.urls')),
-    path('getcode/',views.getcode,name='getcode'),
+    path('repass/',views.repass,name='repass'),
+    path('verify_code/',views.verify_code,name="verify_code")
+    # path('captcha/', include('captcha.urls')),
+    # path('getcode/',views.getcode,name='getcode'),
 ]
 app_name = 'login'
