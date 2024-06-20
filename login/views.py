@@ -1,5 +1,8 @@
+import base64
 import json
 
+from captcha.helpers import captcha_image_url
+from captcha.models import CaptchaStore
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.shortcuts import render
@@ -7,7 +10,11 @@ from django.template.loader import render_to_string
 from django_redis import get_redis_connection
 from django.http import HttpResponse, JsonResponse
 from django.core.mail import send_mail
-from django.conf import settings
+# from django.conf import settings
+# import captcha
+from utils.codeget import check_code
+from django.http import FileResponse
+from captcha.models import CaptchaStore
 import random
 
 
@@ -64,8 +71,18 @@ def register(request):
 
 def login_(request):
     if request.method == 'POST':
+
         json_text = request.body
         json_dic = json.loads(json_text)
+        imgcode = json_dic['captcha']
+        hashkey = json_dic['hashkey']
+        _code = CaptchaStore.objects.filter(hashkey=hashkey)
+        if (not _code) or _code[0].response != imgcode.lower():
+            mess = {
+                "success": False,
+                "message": "图片验证码错误"
+            }
+            return JsonResponse(mess)
         u = json_dic['username']
         p = json_dic['password']
         if User.objects.filter(username=u):
@@ -90,8 +107,10 @@ def login_(request):
                 "message": "用户名或密码错误"
             }
             return JsonResponse(error)
-
-    return render(request, 'login.html')
+    else:
+        hashkey = CaptchaStore.generate_key()
+        image_url = captcha_image_url(hashkey)
+        return render(request, 'login.html', {"image_url": image_url, 'hash_key': hashkey})
 
 
 def sms_code(request):
@@ -123,3 +142,11 @@ def sms_code(request):
             "message": "验证码已发送到您的邮箱"
         }
         )
+
+
+def getcode(request):
+    img, code = check_code()
+    from io import BytesIO
+    stream = BytesIO()
+    img.save(stream, 'png')
+    return HttpResponse(stream.getvalue())

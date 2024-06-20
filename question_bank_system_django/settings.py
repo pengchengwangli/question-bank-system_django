@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-#??????
+# ??????
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor5',
     'ckeditor_uploader',
-    'login.apps.LoginConfig'
+    'login.apps.LoginConfig',
+    'temp_.apps.TempConfig',
+    'captcha'
 ]
 
 MIDDLEWARE = [
@@ -100,6 +102,18 @@ CACHES = {
             "PASSWORD": "a**b**c**123321"  # redis密码
         }
     },
+    "code": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://193.246.161.58:6379/2",  # 安装redis的主机的 IP 和 端口
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "CONNECTION_POOL_KWARGS": {
+                "max_connections": 1000,
+                "encoding": 'utf-8'
+            },
+            "PASSWORD": "a**b**c**123321"  # redis密码
+        }
+    },
 
 }
 # smtp邮件服务
@@ -110,6 +124,9 @@ EMAIL_USE_SSL = True
 EMAIL_HOST_USER = '3347132783@qq.com'
 EMAIL_HOST_PASSWORD = 'oshhcsvszoupcjab'
 
+# CAPTCHA_IMAGE_SIZE = (80, 45)   # 设置 captcha 图片大小
+CAPTCHA_LENGTH = 4   # 字符个数
+CAPTCHA_TIMEOUT = 1
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 

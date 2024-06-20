@@ -1,0 +1,15 @@
+{#{% load  %}#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form>
+    <img src="{{ image_url }}" alt="点击获取新的验证码">
+        <input value="{{ hashkey }}" name = "hashkey" type="hidden" id="id_captcha_0">
+{#        <input value="验证码:">#}
+    </form>
+</body>
+</html>

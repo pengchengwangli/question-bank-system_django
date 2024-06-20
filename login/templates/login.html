@@ -8,12 +8,14 @@
         body, html {
             height: 100%;
         }
+
         .container {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100%;
         }
+
         .form-container {
             background: #fff;
             padding: 30px;
@@ -22,6 +24,7 @@
             max-width: 400px;
             width: 100%;
         }
+
         .form-title {
             margin-bottom: 20px;
             text-align: center;
@@ -29,7 +32,7 @@
     </style>
 {% endblock %}
 {% block body %}
-<div class="container">
+    <div class="container">
         <div class="form-container">
             <h2 class="form-title">登录</h2>
             <form id="loginForm">
@@ -41,6 +44,15 @@
                     <label for="password" class="form-label">密码:</label>
                     <input type="password" class="form-control" id="password" name="password" required>
                 </div>
+                <div class="mb-3">
+                    <label for="captcha" class="form-label">验证码：</label>
+                    <div class="d-flex">
+                        <input type="text" class="form-control me-2" id="captcha" name="captcha" required>
+                        <input value="{{ hash_key }}" name="hashkey" type="hidden" id="id_captcha_0">
+                        <a href="#" class="captcha"><img src="{{ image_url }}" alt="点击换一张" id="id_captcha"></a>
+                    </div>
+                </div>
+
                 <button type="submit" class="btn btn-primary w-100">登录</button>
             </form>
             <div class="text-center mt-3">
@@ -49,15 +61,26 @@
         </div>
     </div>
     <script>
+        $(document).ready(function () {
+            $('.captcha').click(function () {
+                $.getJSON("{% url 'api:captcha' %}", function (result) {
+                    $('#id_captcha').attr('src', result['image_url']);
+                    $('#id_captcha_0').val(result['hashkey'])
+                });
+            });
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
             const loginForm = document.getElementById('loginForm');
             loginForm.addEventListener('submit', function (event) {
                 event.preventDefault();
                 const username = document.getElementById('username').value;
                 const password = document.getElementById('password').value;
+                const captcha = document.getElementById('captcha').value;
+                const hashkey = document.getElementById('id_captcha_0').value;
 
                 // 在这里添加您自己的登录逻辑，例如发送AJAX请求到服务器
-                console.log(`用户名: ${username}, 密码: ${password}`);
+                console.log(`用户名: ${username}, 密码: ${password},验证码：${captcha},验证码id: ${hashkey}`);
 
                 // 示例AJAX请求（使用Fetch API）
                 fetch('/login/login/', {
@@ -65,21 +88,21 @@
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ username: username, password: password })
+                    body: JSON.stringify({username: username, password: password, captcha: captcha, hashkey: hashkey})
                 })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        // 登录成功后的处理，例如跳转到主页
-                        window.location.href = '{% url 'index' %}';
-                    } else {
-                        // 显示错误信息
-                        alert('登录失败: ' + data.message);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // 登录成功后的处理，例如跳转到主页
+                            window.location.href = '{% url 'index' %}';
+                        } else {
+                            // 显示错误信息
+                            alert('登录失败: ' + data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
             });
         });
     </script>
