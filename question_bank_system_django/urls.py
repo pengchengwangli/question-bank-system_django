@@ -18,16 +18,17 @@ from django.urls import path, re_path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from django.shortcuts import render
-from . import view
+from . import views as index
 from temp_ import views
 from django.http import HttpResponseRedirect
 
 urlpatterns = [
-                  path('', view.index),
+                  path('', index.index),
                   path('index/', lambda request: render(request, 'index.html'), name='index'),
                   path('admin/', admin.site.urls),
                   path('login/', include('login.urls', namespace='login')),
                   path('temp/', views.temp, name='tmp'),
                   path('captcha/', include('captcha.urls')),
                   path('api/', include('api.urls')),
+                  path('test/', index.test),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # 媒体路由地址

@@ -10,3 +10,7 @@ def temp(request):
     hashkey = CaptchaStore.generate_key()
     image_url = captcha_image_url(hashkey)
     return render(request,'tmp1.html',context={'hashkey':hashkey,'image_url':image_url})
+
+
+# def index(request):
+#     return None
