@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-# ??????
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -83,7 +82,7 @@ DATABASES = {
         'NAME': 'q_bank_db',
         'USER': 'q_bank_db',
         'PASSWORD': '123456',
-        'HOST': '193.246.161.58',
+        'HOST': '127.0.0.1',
         'POST': '3306'
 
     }
@@ -92,19 +91,7 @@ DATABASES = {
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://193.246.161.58:6379",  # 安装redis的主机的 IP 和 端口
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            "CONNECTION_POOL_KWARGS": {
-                "max_connections": 1000,
-                "encoding": 'utf-8'
-            },
-            "PASSWORD": "a**b**c**123321"  # redis密码
-        }
-    },
-    "code": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://193.246.161.58:6379/2",  # 安装redis的主机的 IP 和 端口
+        "LOCATION": "redis://127.0.0.1:6379",  # 安装redis的主机的 IP 和 端口
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
             "CONNECTION_POOL_KWARGS": {
@@ -126,7 +113,7 @@ EMAIL_HOST_PASSWORD = 'oshhcsvszoupcjab'
 
 # CAPTCHA_IMAGE_SIZE = (80, 45)   # 设置 captcha 图片大小
 CAPTCHA_LENGTH = 4   # 字符个数
-CAPTCHA_TIMEOUT = 1
+CAPTCHA_TIMEOUT = 2
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
