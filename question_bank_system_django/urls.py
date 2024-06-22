@@ -30,5 +30,6 @@ urlpatterns = [
                   path('temp/', views.temp, name='tmp'),
                   path('captcha/', include('captcha.urls')),
                   path('api/', include('api.urls')),
+                  path('ckeditor/', include('ckeditor_uploader.urls')),
                   path('test/', index.test),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # 媒体路由地址
