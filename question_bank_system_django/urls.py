@@ -32,4 +32,5 @@ urlpatterns = [
                   path('api/', include('api.urls')),
                   path('ckeditor/', include('ckeditor_uploader.urls')),
                   path('test/', index.test),
+                  path('qb/', include('question_bank.urls')),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # 媒体路由地址

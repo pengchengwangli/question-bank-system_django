@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth import models as authmodels
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 # Create your models here.
@@ -22,7 +24,7 @@ class KnowledgePoints(models.Model):
 class Question(models.Model):
     bank = models.ForeignKey(verbose_name="所属题库",to=QuestionBank,on_delete=models.CASCADE)
     typename = models.ForeignKey(verbose_name="题型",to=QuestionType,on_delete=models.CASCADE)
-    points = models.ForeignKey(verbose_name="知识点",to=KnowledgePoints,on_delete=models.SET_NULL)
+    points = models.ForeignKey(verbose_name="知识点",to=KnowledgePoints,on_delete=models.CASCADE)
     stem = models.TextField(verbose_name="题干")
     torf = models.BooleanField(verbose_name="判断的对错",default=True)
     option = models.JSONField(verbose_name="选项")

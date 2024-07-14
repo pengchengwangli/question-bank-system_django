@@ -5,5 +5,6 @@ from api import views
 
 urlpatterns = [
     path('refresh_captcha/', views.cap, name='captcha'),
+    # path('')
 ]
 app_name = 'api'

@@ -32,6 +32,7 @@ def register(request):
         hashkey = jsonn['hashkey']
         # print(cap)
         code: QuerySet = CaptchaStore.objects.filter(hashkey=hashkey)
+        # print(code[0].response)
         if (code.count() == 0) or code[0].response != cap.lower():
             # print(code, code[0].response)
             # print(code.count())

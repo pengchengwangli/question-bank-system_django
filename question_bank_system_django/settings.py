@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -35,11 +36,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ckeditor5',
-    'ckeditor_uploader',
     'login.apps.LoginConfig',
     'temp_.apps.TempConfig',
-    'captcha'
+    'captcha',
+    'question_bank.apps.QuestionBankConfig',
+    'ckeditor',
+    'ckeditor_uploader'
 ]
 
 MIDDLEWARE = [
@@ -149,14 +151,26 @@ USE_TZ = True
 # 静态文件
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
-STATIC_ROOT = BASE_DIR / 'collected_static'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # 媒体文件
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-CKEDITOR_UPLOAD_PATH = 'ckeditor/'
+# settings.py 或相应的配置文件
+# CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
+CKEDITOR_UPLOAD_PATH ='upload'
+# 设置图片处理的引擎为pillow，用于生成图片缩略图，在编辑器里浏览上传的图片
 CKEDITOR_IMAGE_BACKEND = 'pillow'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'language': '{{ language }}',
+        'toolbar': 'full',
+        'skin': 'moono',
+    },
+}
+
+
 # MEDIA_ROOT = BASE_DIR/'media'
 # MEDIA_URL = '/media/'
 # Default primary key field type
