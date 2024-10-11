@@ -15,6 +15,7 @@ from django.core.mail import send_mail
 # import captcha
 # from utils.codeget import check_code
 from django.http import FileResponse
+from django.shortcuts import redirect
 from captcha.models import CaptchaStore
 import random
 
@@ -132,6 +133,11 @@ def login_(request):
         hashkey = CaptchaStore.generate_key()
         image_url = captcha_image_url(hashkey)
         return render(request, 'login.html', {"image_url": image_url, 'hash_key': hashkey})
+
+
+def outlogin(request):
+    logout(request)
+    return redirect('index')
 
 
 def sms_code(request):

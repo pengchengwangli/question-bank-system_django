@@ -29,7 +29,7 @@
     <!-- 导航栏 -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">您的公司</a>
+            <a class="navbar-brand" href="#">主页</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -47,12 +47,26 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">联系我们</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login/login">登录</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login/register">注册</a>
-                    </li>
+                    {% if user.is_authenticated %}
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">{{ user.username }} </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{% url 'qbindex' %}"> 控制台</a>
+                        </li>
+                         <li>
+                            <a class="nav-link" href="{% url 'login:out' %}"> 注销</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login/login">登录</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login/register">注册</a>
+                        </li>
+                    {% endif %}
+
+
                 </ul>
             </div>
         </div>
@@ -91,7 +105,6 @@
             <p>© 2024 您的公司. 版权所有.</p>
         </div>
     </footer>
-
     <script src="{% static '/js/bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>

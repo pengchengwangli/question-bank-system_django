@@ -1,0 +1,288 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>侧边导航栏示例</title>
+    <!-- 引入Bootstrap5的CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        /* 导航栏背景色 */
+        #sidebar-wrapper {
+            background-color: #004080;
+        }
+
+        /* 导航栏文字居中显示 */
+        .list-group-item {
+            background-color: #004080;
+            color: #ffffff;
+            text-align: center; /* 文字居中 */
+            transition: all 0.5s ease; /* 渐变效果 */
+        }
+
+        .list-group-item i {
+            margin-right: 8px; /* 图标与文字之间的间距 */
+        }
+
+
+        /* 子菜单样式 */
+        .submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease; /* 渐变效果 */
+            opacity: 0;
+        }
+
+        .submenu.show {
+            max-height: 500px; /* 根据需要调整 */
+            opacity: 1;
+        }
+
+        .submenu a {
+            color: #ffffff;
+            padding: 8px;
+            display: block;
+            text-align: center; /* 文字居中 */
+
+        }
+
+        .submenu a:hover {
+            background-color: #93dadd; /* 浅蓝色 */
+            color: #ffffff;
+            border-radius: 5px; /* 添加圆角 */
+        }
+
+        /* 一级菜单容器 */
+        .menu-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease; /* 渐变效果 */
+            opacity: 0;
+        }
+
+        .menu-container.show {
+            max-height: 1000px; /* 根据需要调整 */
+            opacity: 1;
+        }
+
+        /* 导航栏标题样式 */
+        #toggle-sidebar {
+            cursor: pointer; /* 鼠标光标变为指针 */
+            text-align: center; /* 文字居中 */
+            padding: 1rem;
+            background-color: #004080; /* 浅蓝色 */
+            color: white;
+            transition: all 0.5s ease; /* 渐变效果 */
+        }
+
+        /* p标签的样式调整 */
+        #main-content p {
+            transition: all 0.5s ease; /* 渐变效果 */
+        }
+
+        /* h1标签在菜单显示时隐藏 */
+        #main-content.hidden h1 {
+            display: none;
+        }
+
+        /* p标签在菜单显示时加粗并改变内容 */
+        #main-content.hidden p {
+            font-weight: bold;
+            content: "请选择你要进行的操作";
+        }
+
+        /* 针对“导入题目”、“创建试卷”、“试卷管理”按钮的悬停样式 */
+        #import-question:hover,
+        #create-exam:hover,
+        #manage-exam:hover {
+            background-color: #002a5c; /* 变暗的浅蓝色 */
+            color: #ffd700; /* 文字变黄 */
+            border-radius: 5px; /* 添加圆角 */
+        }
+
+        #toggle-sidebar:hover {
+            background-color: #002a5c; /* 变暗的浅蓝色 */
+            border-radius: 5px; /* 添加圆角 */
+
+        }
+
+        /* 覆盖按钮点击或获得焦点时的默认样式，确保文字颜色保持不变 */
+        .list-group-item:focus,
+        .list-group-item:active {
+            color: #ffffff; /* 保持文字颜色为白色 */
+            background-color: #004080; /* 保持背景色 */
+            outline: none; /* 移除点击后的轮廓效果 */
+            box-shadow: none; /* 移除阴影效果 */
+        }
+
+        /* 修改“开始”按钮的文字颜色为白色 */
+        #toggle-sidebar {
+            color: #ffffff !important; /* 设置文字颜色为白色，使用 !important */
+        }
+
+        /* 点击后保持文字颜色为白色 */
+        #toggle-sidebar:focus,
+        #toggle-sidebar:active {
+            color: #ffffff !important; /* 保持文字颜色为白色，使用 !important */
+            outline: none; /* 移除点击后的轮廓效果 */
+            box-shadow: none; /* 移除阴影效果 */
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="title">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #004080;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img class="group-icon" src="{% static '/iiiccc.png' %}" alt="home"
+                                                  width="40"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" style="color: white;">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: white;">帮助文档</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: white;">联系我们</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" style="color: white;">{{ user.username }} </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{% url 'login:out' %}" style="color: white;"> 注销</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login/login" style="color: white;">登录</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login/register" style="color: white;">注册</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="d-flex">
+    <!-- 侧边栏 -->
+    <div class="border-end" id="sidebar-wrapper" style="min-height: 100vh; width: 200px;">
+        <div class="sidebar-heading text-dark" id="toggle-sidebar">
+            <i class="fa fa-mouse-pointer"></i> 开始
+        </div>
+        <div class="menu-container" id="menu-container">
+            <a href="#" class="list-group-item list-group-item-action p-3" id="import-question"><i
+                    class="icon-book"></i>导入题目</a>
+            <div class="submenu" id="submenu-import">
+                <a href="{% url 'danxuan' %}" class="list-group-item list-group-item-action"
+                   target="menuFrame">单选题</a>
+                <a href="{% url 'tf' %}" class="list-group-item list-group-item-action" target="menuFrame">判断题</a>
+                <a href="{% url 'jianda' %}" class="list-group-item list-group-item-action"
+                   target="menuFrame">简答题</a>
+            </div>
+            <a href="#" class="list-group-item list-group-item-action p-3" id="create-exam"><i class="icon-pencil"></i>创建试卷</a>
+            <div class="submenu" id="submenu-create">
+                <a href="{% url 'qblist' %}" class="list-group-item list-group-item-action"
+                   target="menuFrame">题目列表</a>
+                <a href="{% url 'zuzu' %}" class="list-group-item list-group-item-action"
+                   target="menuFrame" >新建空白试卷</a>
+                <a href="#" class="list-group-item list-group-item-action">从模板创建</a>
+            </div>
+            <a href="#" class="list-group-item list-group-item-action p-3" id="manage-exam"><i class="icon-cog"></i>试卷管理</a>
+            <div class="submenu" id="submenu-manage">
+                <a href="#" class="list-group-item list-group-item-action">查看所有试卷</a>
+                <a href="#" class="list-group-item list-group-item-action">已发布试卷</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主内容 -->
+    <div class="p-4" style="width: 100%;" id="main-content">
+        <iframe id="menuFrame" name="menuFrame" src="" style="overflow: visible;"
+                scrolling="yes" frameborder="no" width="100%" height="100%">
+        </iframe>
+    </div>
+</div>
+
+<!-- 引入Bootstrap5的JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // 监听导航栏标题点击事件，控制一级菜单的显示和隐藏，并切换背景颜色
+    document.getElementById('toggle-sidebar').addEventListener('click', function () {
+        var menuContainer = document.getElementById('menu-container');
+        var toggleSidebar = document.getElementById('toggle-sidebar');
+        var mainContent = document.getElementById('main-content');
+        var pElement = mainContent.querySelector('p');
+
+        // 切换菜单显示状态
+        if (menuContainer.classList.contains('show')) {
+            menuContainer.classList.remove('show');
+            mainContent.classList.remove('hidden'); // 显示h1，恢复p标签内容
+            pElement.textContent = "按“开始”继续"; // 恢复p标签原内容
+        } else {
+            menuContainer.classList.add('show');
+            mainContent.classList.add('hidden'); // 隐藏h1，修改p标签内容
+            pElement.textContent = "请选择你要进行的操作"; // 修改p标签内容
+        }
+
+        // 切换背景颜色
+        toggleSidebar.classList.toggle('active');
+    });
+
+
+    // 监听“导入题目”点击事件，控制二级菜单显示和隐藏
+    document.getElementById('import-question').addEventListener('click', function () {
+        var submenu = document.getElementById('submenu-import');
+        toggleMenu(submenu);
+    });
+
+    // 监听“创建试卷”点击事件，控制二级菜单显示和隐藏
+    document.getElementById('create-exam').addEventListener('click', function () {
+        var submenu = document.getElementById('submenu-create');
+        toggleMenu(submenu);
+    });
+
+    // 监听“试卷管理”点击事件，控制二级菜单显示和隐藏
+    document.getElementById('manage-exam').addEventListener('click', function () {
+        var submenu = document.getElementById('submenu-manage');
+        toggleMenu(submenu);
+    });
+
+    // 通用函数，控制菜单的显示和隐藏
+    function toggleMenu(submenu) {
+        if (submenu.classList.contains('show')) {
+            submenu.classList.remove('show');
+        } else {
+            closeAllSubmenus();
+            submenu.classList.add('show');
+        }
+    }
+
+    // 关闭所有子菜单
+    function closeAllSubmenus() {
+        var submenus = document.querySelectorAll('.submenu');
+        submenus.forEach(function (submenu) {
+            submenu.classList.remove('show');
+        });
+    }
+</script>
+</body>
+</html>

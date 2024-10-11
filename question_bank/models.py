@@ -25,9 +25,9 @@ class Question(models.Model):
     bank = models.ForeignKey(verbose_name="所属题库",to=QuestionBank,on_delete=models.CASCADE)
     typename = models.ForeignKey(verbose_name="题型",to=QuestionType,on_delete=models.CASCADE)
     points = models.ForeignKey(verbose_name="知识点",to=KnowledgePoints,on_delete=models.CASCADE)
-    stem = models.TextField(verbose_name="题干")
+    stem = RichTextUploadingField(verbose_name="题干")
     torf = models.BooleanField(verbose_name="判断的对错",default=True)
-    option = models.JSONField(verbose_name="选项")
+    option = models.JSONField(verbose_name="选项",null=True)
     ans = models.TextField(verbose_name="答案")
     anss = models.TextField(verbose_name="解析")
 

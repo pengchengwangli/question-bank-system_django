@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>题目列表</title>
+    <!-- 引入 Bootstrap 5 CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">题目列表</h1>
+{#        <a href="{% url 'qblist' %}" class="btn btn-refresh btn-lg">刷新列表</a>#}
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">题目</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 假设通过服务器端渲染或前端动态填充数据 -->
+                {% for qli in qlist %}
+                	<tr>
+                        <td>{{ qli.id }}</td>
+                        <td>{{ qli.stem | safe }}</td>
+                    </tr>
+                {% endfor %}
+
+                <!-- 继续填充更多题目 -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 引入 Bootstrap 5 JavaScript 和 Popper.js（可选） -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>

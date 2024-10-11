@@ -24,7 +24,8 @@ from django.http import HttpResponseRedirect
 
 urlpatterns = [
                   path('', index.index),
-                  path('index/', lambda request: render(request, 'index.html'), name='index'),
+                  path('index/', lambda request: render(request, 'index.html', context={'user': request.user}),
+                       name='index'),
                   path('admin/', admin.site.urls),
                   path('login/', include('login.urls', namespace='login')),
                   path('temp/', views.temp, name='tmp'),

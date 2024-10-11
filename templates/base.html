@@ -78,12 +78,21 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">联系我们</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login/login">登录</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login/register">注册</a>
-                </li>
+                {% if user.is_authenticated %}
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">{{ user.username }} </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{% url 'login:out' %}"> 注销</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login/login">登录</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login/register">注册</a>
+                        </li>
+                    {% endif %}
             </ul>
         </div>
     </div>

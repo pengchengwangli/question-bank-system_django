@@ -23,7 +23,7 @@ SECRET_KEY = 'django-insecure-gjm=+-w6@w=(a6%y81yd4=q$y&f)m7z=et4fwoh!)1b$z=gci(
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+X_FRAME_OPTIONS = 'ALLOW-FROM'
 # 域名访问权限
 ALLOWED_HOSTS = ["*"]
 
@@ -111,7 +111,7 @@ EMAIL_HOST = 'smtp.qq.com'
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 EMAIL_HOST_USER = '3347132783@qq.com'
-EMAIL_HOST_PASSWORD = 'oshhcsvszoupcjab'
+EMAIL_HOST_PASSWORD = 'xhfsmzytxypydbbj'
 
 # CAPTCHA_IMAGE_SIZE = (80, 45)   # 设置 captcha 图片大小
 CAPTCHA_LENGTH = 4   # 字符个数

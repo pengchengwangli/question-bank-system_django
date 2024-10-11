@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9ec6edad-82ce-4659-a3dc-f568bd3565eb" name="更改" comment="sadd">
+      <change afterPath="$PROJECT_DIR$/media/upload/2024/10/08/34a4284443a98226dbb937e4cf82b9014b90eb5f.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/question_bank/migrations/0006_alter_question_stem.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/question_bank/templates/jianda.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/question_bank/templates/qbindex.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/question_bank/templates/qblist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/question_bank/templates/tf.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/question_bank/templates/zuzu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/iiiccc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/1762677-20201005184024162-430729700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/1762677-20201005184024162-430729700_BF7ddZ8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/1762677-20201005184024162-430729700_BF7ddZ8_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/1762677-20201005184024162-430729700_XEhWOtL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/1762677-20201005184024162-430729700_XEhWOtL_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/1762677-20201005184024162-430729700_bGAoBdX.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/1762677-20201005184024162-430729700_bGAoBdX_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/1762677-20201005184024162-430729700_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/crxpgb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/crxpgb_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/dsc_8072.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/dsc_8072_thumb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713134243-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713134243-1_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713174704-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713174704-1_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175141-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175141-1_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-2_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-3_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-4_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-5_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-6_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-1_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-2_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-3_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-4_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-5_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-10_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-11_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-12_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-13_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-14_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-15_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-16_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-17_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-6_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-7_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-8_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-9_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175811-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175811-1_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175822-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175822-2_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180614-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180614-3_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180614-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180614-4_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180614-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180614-5_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180614-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180614-6_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-10_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-11_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-7_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-8_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-9_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-1_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-2_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-3_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-4_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-5_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-1_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-2_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-3_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-4_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-5_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-10_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-6_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-7_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-8_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-9_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-1_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-2_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-3_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-4_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-5_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/question_bank/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/question_bank/templates/danxuan.html" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank/templates/danxuan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/question_bank/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/question_bank/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/question_bank_system_django/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank_system_django/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/question_bank_system_django/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank_system_django/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2hqrNnuOwmillwE7Ayiqd0MgE7R" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/33471/PycharmProjects/question_bank_system_django/static&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\33471\PycharmProjects\question_bank_system_django\static" />
+      <recent name="C:\Users\33471\PycharmProjects\question_bank_system_django\staticfiles\ckeditor\ckeditor\plugins" />
+      <recent name="C:\Users\33471\PycharmProjects\question_bank_system_django\static\ckeditor\ckeditor\plugins" />
+      <recent name="C:\Users\33471\PycharmProjects\question_bank_system_django\static\ckeditor" />
+      <recent name="C:\Users\33471\PycharmProjects\question_bank_system_django\static\ckeditor5" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="question_bank_system_django" type="Python.DjangoServer" factoryName="Django server">
+      <module name="question_bank_system_django" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="question_bank_system_django.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="9ec6edad-82ce-4659-a3dc-f568bd3565eb" name="更改" comment="" />
+      <created>1718332410699</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718332410699</updated>
+      <workItem from="1718332474482" duration="12306000" />
+      <workItem from="1718516538787" duration="649000" />
+      <workItem from="1718536703417" duration="6154000" />
+      <workItem from="1718595752393" duration="465000" />
+      <workItem from="1718635562949" duration="867000" />
+      <workItem from="1718681731221" duration="5595000" />
+      <workItem from="1718688692719" duration="5566000" />
+      <workItem from="1718697484699" duration="4047000" />
+      <workItem from="1718706522769" duration="794000" />
+      <workItem from="1718707338338" duration="3300000" />
+      <workItem from="1718719228548" duration="6565000" />
+      <workItem from="1718778925786" duration="13781000" />
+      <workItem from="1718841606434" duration="5225000" />
+      <workItem from="1718847913821" duration="1071000" />
+      <workItem from="1718851060775" duration="6676000" />
+      <workItem from="1718865147311" duration="1470000" />
+      <workItem from="1718869305830" duration="7369000" />
+      <workItem from="1718897658993" duration="6299000" />
+      <workItem from="1718935631187" duration="2768000" />
+      <workItem from="1718940451160" duration="6539000" />
+      <workItem from="1718961003259" duration="78000" />
+      <workItem from="1718974953234" duration="3662000" />
+      <workItem from="1719024175823" duration="11017000" />
+      <workItem from="1719069328441" duration="7689000" />
+      <workItem from="1719111747695" duration="11432000" />
+      <workItem from="1719577253929" duration="5474000" />
+      <workItem from="1719629168122" duration="2504000" />
+      <workItem from="1720837499495" duration="11757000" />
+      <workItem from="1720851196548" duration="1060000" />
+      <workItem from="1720852650885" duration="21757000" />
+      <workItem from="1720960487900" duration="728000" />
+      <workItem from="1721009073905" duration="673000" />
+      <workItem from="1721041183252" duration="12000" />
+      <workItem from="1727186002506" duration="715000" />
+      <workItem from="1728373391042" duration="34000" />
+      <workItem from="1728373437865" duration="99000" />
+      <workItem from="1728373548232" duration="13340000" />
+      <workItem from="1728401674075" duration="120000" />
+      <workItem from="1728432482750" duration="4724000" />
+      <workItem from="1728439568409" duration="104000" />
+      <workItem from="1728518600144" duration="6066000" />
+      <workItem from="1728526019705" duration="145000" />
+      <workItem from="1728604740258" duration="3117000" />
+      <workItem from="1728608452082" duration="747000" />
+      <workItem from="1728645843915" duration="7389000" />
+    </task>
+    <task id="LOCAL-00001" summary="初始配置">
+      <option name="closed" value="true" />
+      <created>1718340464583</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718340464583</updated>
+    </task>
+    <task id="LOCAL-00002" summary="初始配置">
+      <option name="closed" value="true" />
+      <created>1718342053306</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1718342053306</updated>
+    </task>
+    <task id="LOCAL-00003" summary="初始配置">
+      <option name="closed" value="true" />
+      <created>1718349393776</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718349393776</updated>
+    </task>
+    <task id="LOCAL-00004" summary="删除多余文件">
+      <option name="closed" value="true" />
+      <created>1718349535089</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718349535089</updated>
+    </task>
+    <task id="LOCAL-00005" summary="添加依赖库文件">
+      <option name="closed" value="true" />
+      <created>1718537207972</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1718537207972</updated>
+    </task>
+    <task id="LOCAL-00006" summary="添加缺少配置">
+      <option name="closed" value="true" />
+      <created>1718538206246</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1718538206246</updated>
+    </task>
+    <task id="LOCAL-00007" summary="添加缺少配置">
+      <option name="closed" value="true" />
+      <created>1718541671221</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1718541671221</updated>
+    </task>
+    <task id="LOCAL-00008" summary="添加缺少配置">
+      <option name="closed" value="true" />
+      <created>1718542021778</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1718542021778</updated>
+    </task>
+    <task id="LOCAL-00009" summary="添加前端常用css/js">
+      <option name="closed" value="true" />
+      <created>1718681851147</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1718681851147</updated>
+    </task>
+    <task id="LOCAL-00010" summary="增加注册app">
+      <option name="closed" value="true" />
+      <created>1718682341306</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1718682341306</updated>
+    </task>
+    <task id="LOCAL-00011" summary="换个app名字">
+      <option name="closed" value="true" />
+      <created>1718682581189</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1718682581189</updated>
+    </task>
+    <task id="LOCAL-00012" summary="换个app名字">
+      <option name="closed" value="true" />
+      <created>1718685977032</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1718685977032</updated>
+    </task>
+    <task id="LOCAL-00013" summary="修改页面">
+      <option name="closed" value="true" />
+      <created>1718686513265</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1718686513265</updated>
+    </task>
+    <task id="LOCAL-00014" summary="完成注册页面">
+      <option name="closed" value="true" />
+      <created>1718706582739</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1718706582739</updated>
+    </task>
+    <task id="LOCAL-00015" summary="实现登录模块">
+      <option name="closed" value="true" />
+      <created>1718709931059</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1718709931059</updated>
+    </task>
+    <task id="LOCAL-00016" summary="实现登录模块">
+      <option name="closed" value="true" />
+      <created>1718726357413</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1718726357413</updated>
+    </task>
+    <task id="LOCAL-00017" summary="实现登录模块">
+      <option name="closed" value="true" />
+      <created>1718726947904</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1718726947904</updated>
+    </task>
+    <task id="LOCAL-00018" summary="添加验证码">
+      <option name="closed" value="true" />
+      <created>1718860187072</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1718860187072</updated>
+    </task>
+    <task id="LOCAL-00019" summary="添加验证码">
+      <option name="closed" value="true" />
+      <created>1718866605902</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1718866605902</updated>
+    </task>
+    <task id="LOCAL-00020" summary="添加找回密码">
+      <option name="closed" value="true" />
+      <created>1718903939930</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1718903939930</updated>
+    </task>
+    <task id="LOCAL-00021" summary="测试程序">
+      <option name="closed" value="true" />
+      <created>1718977266130</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1718977266130</updated>
+    </task>
+    <task id="LOCAL-00022" summary="添加常用图标">
+      <option name="closed" value="true" />
+      <created>1719024327374</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1719024327374</updated>
+    </task>
+    <task id="LOCAL-00023" summary="创建app和模型">
+      <option name="closed" value="true" />
+      <created>1719058968999</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1719058968999</updated>
+    </task>
+    <task id="LOCAL-00024" summary="sadd">
+      <option name="closed" value="true" />
+      <created>1720840722508</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1720840722508</updated>
+    </task>
+    <task id="LOCAL-00025" summary="sadd">
+      <option name="closed" value="true" />
+      <created>1720960576058</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1720960576058</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="初始配置" />
+    <MESSAGE value="删除多余文件" />
+    <MESSAGE value="添加依赖库文件" />
+    <MESSAGE value="添加缺少配置" />
+    <MESSAGE value="添加前端常用css/js" />
+    <MESSAGE value="增加注册app" />
+    <MESSAGE value="添加注册前端页面" />
+    <MESSAGE value="修改页面" />
+    <MESSAGE value="完成注册页面" />
+    <MESSAGE value="添加前端提示" />
+    <MESSAGE value="修改路由" />
+    <MESSAGE value="添加验证码" />
+    <MESSAGE value="添加找回密码" />
+    <MESSAGE value="测试程序" />
+    <MESSAGE value="添加常用图标" />
+    <MESSAGE value="创建app和模型" />
+    <MESSAGE value="sadd" />
+    <option name="LAST_COMMIT_MESSAGE" value="sadd" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/question_bank_system_django$codeget.coverage" NAME="codeget 覆盖结果" MODIFIED="1718811120132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+  </component>
+</project>
