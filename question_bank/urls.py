@@ -11,5 +11,6 @@ urlpatterns = [
     path('index/', views.index,name='qbindex'),
     path('qblist/',views.qblist,name='qblist'),
     path('zuzu/',views.zuzu,name='zuzu'),
+    path('getk/',views.getk),
 
 ]

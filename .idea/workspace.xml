@@ -5,148 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ec6edad-82ce-4659-a3dc-f568bd3565eb" name="更改" comment="sadd">
-      <change afterPath="$PROJECT_DIR$/media/upload/2024/10/08/34a4284443a98226dbb937e4cf82b9014b90eb5f.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/question_bank/migrations/0006_alter_question_stem.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/question_bank/templates/jianda.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/question_bank/templates/qbindex.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/question_bank/templates/qblist.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/question_bank/templates/tf.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/question_bank/templates/zuzu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/iiiccc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/dame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/1762677-20201005184024162-430729700.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/1762677-20201005184024162-430729700_BF7ddZ8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/1762677-20201005184024162-430729700_BF7ddZ8_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/1762677-20201005184024162-430729700_XEhWOtL.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/1762677-20201005184024162-430729700_XEhWOtL_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/1762677-20201005184024162-430729700_bGAoBdX.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/1762677-20201005184024162-430729700_bGAoBdX_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/1762677-20201005184024162-430729700_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/crxpgb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/crxpgb_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/dsc_8072.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/dsc_8072_thumb.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713134243-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713134243-1_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713174704-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713174704-1_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175141-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175141-1_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-2_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-3_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-4_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-5_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175315-6_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-1_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-2_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-3_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-4_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175352-5_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-10_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-11_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-12_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-13_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-14_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-15_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-16_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-17_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-6_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-7_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-8_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175505-9_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175811-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175811-1_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175822-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713175822-2_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180614-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180614-3_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180614-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180614-4_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180614-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180614-5_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180614-6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180614-6_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-10_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-11_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-7_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-8_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180649-9_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-1_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-2_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-3_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-4_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713180952-5_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-1_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-2_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-3_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-4_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183439-5_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-10_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-6_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-7_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-8_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713183719-9_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-1_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-2_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-3_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-4_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/upload/2024/07/13/image-20240713184220-5_thumb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_bank/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_bank/templates/danxuan.html" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank/templates/danxuan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/question_bank/templates/qbindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank/templates/qbindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/question_bank/templates/zuzu.html" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank/templates/zuzu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/question_bank/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/question_bank/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_bank_system_django/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank_system_django/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_bank_system_django/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank_system_django/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -290,7 +154,8 @@
       <workItem from="1728526019705" duration="145000" />
       <workItem from="1728604740258" duration="3117000" />
       <workItem from="1728608452082" duration="747000" />
-      <workItem from="1728645843915" duration="7389000" />
+      <workItem from="1728645843915" duration="8316000" />
+      <workItem from="1728864675860" duration="4602000" />
     </task>
     <task id="LOCAL-00001" summary="初始配置">
       <option name="closed" value="true" />
@@ -492,7 +357,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720960576058</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="sadd">
+      <option name="closed" value="true" />
+      <created>1728653663876</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1728653663876</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

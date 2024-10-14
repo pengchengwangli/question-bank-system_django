@@ -7,76 +7,182 @@
     <title>组卷系统</title>
     <!-- 引入Bootstrap 5的CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
 </head>
 <body>
 
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">组卷系统</h1>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">组卷系统</h1>
 
-        <div class="row">
-            <div class="col-md-4">
-                <div class="mb-3">
-                    <label for="mcq-count" class="form-label">选择题个数:</label>
-                    <input type="number" class="form-control" id="mcq-count" value="0" min="0">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="mb-3">
-                    <label for="tf-count" class="form-label">判断题个数:</label>
-                    <input type="number" class="form-control" id="tf-count" value="0" min="0">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="mb-3">
-                    <label for="sa-count" class="form-label">简答题个数:</label>
-                    <input type="number" class="form-control" id="sa-count" value="0" min="0">
-                </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="mcq-count" class="form-label">选择题个数:</label>
+                <input type="number" class="form-control" id="mcq-count" value="0" min="0">
             </div>
         </div>
-
-        <div class="text-center">
-            <button id="generate-paper" class="btn btn-primary">组卷</button>
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="tf-count" class="form-label">判断题个数:</label>
+                <input type="number" class="form-control" id="tf-count" value="0" min="0">
+            </div>
         </div>
-
-        <div id="questions" class="mt-5 border p-4 bg-light"></div>
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="sa-count" class="form-label">简答题个数:</label>
+                <input type="number" class="form-control" id="sa-count" value="0" min="0">
+            </div>
+        </div>
     </div>
 
-    <!-- 引入Bootstrap 5的JS和Popper -->
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <!-- 选择知识点下拉菜单 -->
+    <div class="mt-4">
+        <h3>选择知识点进行修改：</h3>
+        <select id="knowledge-point-select" class="form-select">
+            <option value="">请选择知识点</option>
+        </select>
+    </div>
 
-    <script>
-        // 当点击组卷按钮时触发事件
-        document.getElementById('generate-paper').addEventListener('click', function() {
-            // 获取用户输入的题目数量
-            const mcqCount = document.getElementById('mcq-count').value;
-            const tfCount = document.getElementById('tf-count').value;
-            const saCount = document.getElementById('sa-count').value;
+    <!-- 占比调整 -->
+    <div id="percentage-adjustment" class="mt-4" style="display: none;">
+        <label class="form-label">占比: <span id="selected-percentage">0</span>%</label>
+        <select id="percentage-select" class="form-select">
+            <!-- 百分比选项将由JavaScript动态生成 -->
+        </select>
+    </div>
 
-            // 构造请求数据
-            const requestData = {
-                mcq_count: parseInt(mcqCount, 10),
-                tf_count: parseInt(tfCount, 10),
-                sa_count: parseInt(saCount, 10)
-            };
+    <div class="text-center mt-4">
+        <button id="generate-paper" class="btn btn-primary">组卷</button>
+    </div>
 
-            // 使用fetch发送请求到后端
-            fetch('/qb/zuzu/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(requestData)
-            })
-            .then(response => response.text())  // 接收HTML文本
-            .then(html => {
-                // 将HTML内容直接插入到questions容器
-                document.getElementById('questions').innerHTML = html;
-            })
-            .catch(error => {
-                console.error('Error:', error);
+    <div id="questions" class="mt-5 border p-4 bg-light"></div>
+</div>
+
+<!-- 引入Bootstrap 5的JS和Popper -->
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+<script>
+    let knowledgePointsData = [];
+
+    // 获取知识点数据并生成知识点选择下拉菜单
+    function loadKnowledgePoints() {
+        fetch('/qb/getk/')
+        .then(response => response.json())
+        .then(data => {
+            const knowledgePointSelect = document.getElementById('knowledge-point-select');
+            knowledgePointsData = data.knowledge_points; // 存储知识点数据
+
+            // 生成知识点选择下拉菜单选项
+            knowledgePointsData.forEach(kp => {
+                const option = document.createElement('option');
+                option.value = kp.id;
+                option.text = kp.name;
+                knowledgePointSelect.appendChild(option);
             });
+
+            // 初始化百分比选择框
+            initializePercentageOptions();
+        })
+        .catch(error => {
+            console.error('Error fetching knowledge points:', error);
         });
-    </script>
+    }
+
+    // 生成百分比选项（0-100%）
+    function initializePercentageOptions() {
+        const percentageSelect = document.getElementById('percentage-select');
+        percentageSelect.innerHTML = ''; // 清空之前的选项
+
+        for (let i = 0; i <= 100; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.text = `${i}%`;
+            percentageSelect.appendChild(option);
+        }
+    }
+
+    // 添加知识点选择事件
+    document.getElementById('knowledge-point-select').addEventListener('change', function() {
+        const selectedId = this.value;
+        if (selectedId) {
+            const selectedKnowledgePoint = knowledgePointsData.find(kp => kp.id === parseInt(selectedId));
+            const percentage = selectedKnowledgePoint ? selectedKnowledgePoint.percentage : 0;
+
+            // 显示当前知识点的百分比并允许修改
+            document.getElementById('percentage-adjustment').style.display = 'block';
+            document.getElementById('selected-percentage').innerText = percentage;
+            document.getElementById('percentage-select').value = percentage;
+        } else {
+            document.getElementById('percentage-adjustment').style.display = 'none';
+        }
+    });
+
+    // 更新所选知识点的占比
+    document.getElementById('percentage-select').addEventListener('change', function() {
+        const selectedId = document.getElementById('knowledge-point-select').value;
+        const newPercentage = parseInt(this.value);
+
+        if (selectedId) {
+            // 更新数据
+            const selectedKnowledgePoint = knowledgePointsData.find(kp => kp.id === parseInt(selectedId));
+            const oldPercentage = selectedKnowledgePoint.percentage;
+            const totalPercentage = knowledgePointsData.reduce((sum, kp) => sum + kp.percentage, 0);
+
+            // 确保其他知识点占比调整
+            const difference = newPercentage - oldPercentage;
+            if (totalPercentage + difference <= 100) {
+                selectedKnowledgePoint.percentage = newPercentage;
+
+                // 更新其他知识点占比
+                let remainingPercentage = 100 - knowledgePointsData.reduce((sum, kp) => sum + kp.percentage, 0);
+                knowledgePointsData.forEach(kp => {
+                    if (kp.id !== parseInt(selectedId) && remainingPercentage > 0) {
+                        kp.percentage += remainingPercentage;
+                        remainingPercentage = 0;
+                    }
+                });
+            }
+
+            // 显示更新后的百分比
+            document.getElementById('selected-percentage').innerText = newPercentage;
+        }
+    });
+
+    // 页面加载时获取知识点数据
+    window.onload = loadKnowledgePoints;
+
+    // 当点击组卷按钮时触发事件
+    document.getElementById('generate-paper').addEventListener('click', function() {
+        const mcqCount = document.getElementById('mcq-count').value;
+        const tfCount = document.getElementById('tf-count').value;
+        const saCount = document.getElementById('sa-count').value;
+
+        // 构造请求数据
+        const requestData = {
+            mcq_count: parseInt(mcqCount, 10),
+            tf_count: parseInt(tfCount, 10),
+            sa_count: parseInt(saCount, 10),
+            knowledge_points: knowledgePointsData
+        };
+
+        // 使用fetch发送请求到后端
+        fetch('/qb/zuzu/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestData)
+        })
+        .then(response => response.text())  // 接收HTML文本
+        .then(html => {
+            // 将HTML内容直接插入到questions容器
+            document.getElementById('questions').innerHTML = html;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+</script>
 
 </body>
 </html>

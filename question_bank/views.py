@@ -103,7 +103,35 @@ def zuzu(request):
         return HttpResponse(returnstr)
     else:
         return render(request,'zuzu.html')
-
+def getk(request):
+    loadstr = """{
+  "knowledge_points": [
+    {
+      "id": 1,
+      "name": "网络协议"
+    },
+    {
+      "id": 2,
+      "name": "网络层次结构"
+    },
+    {
+      "id": 3,
+      "name": "数据传输"
+    },
+    {
+      "id": 4,
+      "name": "路由算法"
+    },
+    {
+      "id": 5,
+      "name": "流量控制"
+    }
+  ]
+}
+"""
+    tmp = json.loads(loadstr)
+    print(tmp)
+    return JsonResponse(tmp)
 def tf(request):
     if not request.user.is_authenticated:
         return render(request,'dame.html')
