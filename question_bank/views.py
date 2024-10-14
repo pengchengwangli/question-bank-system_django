@@ -1,30 +1,33 @@
 import json
 import random
+import time
 
+from django.core.files.storage import default_storage
 from django.shortcuts import render
 from question_bank import models
 from django.http import HttpResponse, JsonResponse
 # from question_bank import forms
-from .models import Question
+from .models import Question, TestPaper
 
 
 def danxuan(request):
     if not request.user.is_authenticated:
-        return render(request,'dame.html')
+        return render(request, 'dame.html')
     if request.method != "POST":
         return render(request, 'danxuan.html')
     else:
         return HttpResponse("测试")
 
+
 def jianda(request):
     if not request.user.is_authenticated:
-        return render(request,'dame.html')
-    return render(request,'jianda.html')
+        return render(request, 'dame.html')
+    return render(request, 'jianda.html')
 
 
 def first(request):
     if not request.user.is_authenticated:
-        return render(request,'dame.html')
+        return render(request, 'dame.html')
     jsontest = request.body
     # print(jsontest)
     jsonn = json.loads(jsontest)
@@ -37,46 +40,54 @@ def first(request):
     timu.save()
     return JsonResponse({
         "success": True,
-        "message": "xxxxxxx保存成功"
+        "message": "题目保存成功"
     })
+
 
 def ttff(request):
     if not request.user.is_authenticated:
-        return render(request,'dame.html')
+        return render(request, 'dame.html')
     jsontest = request.body
     jsonn = json.loads(jsontest)
     timu = Question(bank=models.QuestionBank.objects.get(id=1), typename=models.QuestionType.objects.get(id=2),
-                    points=models.KnowledgePoints.objects.get(id=1), stem=jsonn['questioncontent'], ans=jsonn['ans'],torf=(
-                    jsonn['ans'] == '1'), anss=jsonn['anss'])
+                    points=models.KnowledgePoints.objects.get(id=1), stem=jsonn['questioncontent'], ans=jsonn['ans'],
+                    torf=(
+                            jsonn['ans'] == '1'), anss=jsonn['anss'])
     timu.save()
     return JsonResponse({
         "success": True,
-        "message": "xxxxxxx保存成功"
+        "message": "题目保存成功"
     })
+
+
 def jd(request):
     if not request.user.is_authenticated:
-        return render(request,'dame.html')
+        return render(request, 'dame.html')
     jsontest = request.body
     jsonn = json.loads(jsontest)
     timu = Question(bank=models.QuestionBank.objects.get(id=1), typename=models.QuestionType.objects.get(id=3),
-                    points=models.KnowledgePoints.objects.get(id=1), stem=jsonn['questioncontent'], ans=jsonn['ans'],anss=jsonn['anss'])
+                    points=models.KnowledgePoints.objects.get(id=1), stem=jsonn['questioncontent'], ans=jsonn['ans'],
+                    anss=jsonn['anss'])
     timu.save()
     return JsonResponse({
         "success": True,
-        "message": "xxxxxxx保存成功"
+        "message": "题目保存成功"
     })
+
 
 def index(request):
     if not request.user.is_authenticated:
-        return render(request,'dame.html')
-    return render(request, 'qbindex.html',context={'user':request.user})
+        return render(request, 'dame.html')
+    return render(request, 'qbindex.html', context={'user': request.user})
+
 
 def qblist(request):
     qlist = Question.objects.all()
 
-    return render(request,'qblist.html',context={'qlist':qlist})
-def zuzu(request):
+    return render(request, 'qblist.html', context={'qlist': qlist})
 
+
+def zuzu(request):
     if request.method == 'POST':
         bodystr = request.body
         loadstr = json.loads(bodystr)
@@ -102,7 +113,9 @@ def zuzu(request):
         # print(random_questions[0].stem)
         return HttpResponse(returnstr)
     else:
-        return render(request,'zuzu.html')
+        return render(request, 'zuzu.html')
+
+
 def getk(request):
     loadstr = """{
   "knowledge_points": [
@@ -132,7 +145,28 @@ def getk(request):
     tmp = json.loads(loadstr)
     print(tmp)
     return JsonResponse(tmp)
+
+
 def tf(request):
     if not request.user.is_authenticated:
-        return render(request,'dame.html')
+        return render(request, 'dame.html')
     return render(request, 'tf.html')
+
+
+def upload_html(request):
+    if request.method == 'POST' and request.FILES['file']:
+        file = request.FILES['file']
+        file_name = default_storage.save(f'uploads/{time.time()}.html', file)
+        file_url = default_storage.url(file_name)
+        models.TestPaper.objects.create(url=file_url)
+        # tmp.save()
+        return JsonResponse({'success': True, 'url': file_url})
+
+    return JsonResponse({'success': False})
+
+def showtest(request):
+    testlist = TestPaper.objects.all()
+    tlist = []
+    for test in testlist:
+        tlist.append({"url": test.url})
+    return render(request, 'showtest.html',context={'exams': tlist})

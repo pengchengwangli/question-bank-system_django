@@ -12,12 +12,13 @@
 
     <div class="container mt-5">
         <h1 class="mb-4">题目列表</h1>
-{#        <a href="{% url 'qblist' %}" class="btn btn-refresh btn-lg">刷新列表</a>#}
+
         <table class="table table-striped table-hover">
             <thead class="table-dark">
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">题目</th>
+                    <th scope="col">题目类型</th> <!-- 新增列 -->
                 </tr>
             </thead>
             <tbody>
@@ -26,6 +27,7 @@
                 	<tr>
                         <td>{{ qli.id }}</td>
                         <td>{{ qli.stem | safe }}</td>
+                        <td>{{ qli.typename.typename }}</td> <!-- 显示题目类型 -->
                     </tr>
                 {% endfor %}
 

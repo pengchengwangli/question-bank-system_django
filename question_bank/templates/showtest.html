@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>试卷列表</title>
+    <!-- 引入Bootstrap 5的CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="text-center">试卷列表</h1>
+
+    <!-- 提示信息 -->
+    <div id="no-exams" class="alert alert-warning mt-4 text-center" style="display: none;">
+        暂无试卷
+    </div>
+
+    <!-- 试卷列表容器 -->
+    <ul id="exam-list" class="list-group mt-4">
+        <!-- 试卷列表项将通过JavaScript动态生成 -->
+    </ul>
+</div>
+
+<script>
+    // 假设后端提供的试卷数据在一个全局变量 exams
+    const exams = {{ exams|safe }};  // exams 是后端传递的试卷数据（一个包含URL的数组）
+
+    $(document).ready(function() {
+        const examList = $('#exam-list');
+        const noExamsMessage = $('#no-exams');
+
+        if (exams.length === 0) {
+            // 如果没有试卷，显示暂无试卷信息
+            noExamsMessage.show();
+        } else {
+            // 如果有试卷，遍历每个试卷的URL，动态生成列表项
+            exams.forEach(exam => {
+                // 创建列表项元素
+                const listItem = $('<li>').addClass('list-group-item d-flex justify-content-between align-items-center');
+
+                // 向每个试卷的URL发送请求，获取部分内容
+                $.ajax({
+                    url: exam.url,
+                    method: 'GET',
+                    success: function(data) {
+                        // 提取部分内容展示，假设展示前100个字符
+                        const previewText = $(data).text().substring(0, 100).trim();
+
+                        // 创建试卷链接
+                        const examLink = $('<a>').attr('href', exam.url)
+                            .text(`试卷预览: ${previewText}...`)
+                            .addClass('text-decoration-none');
+
+                        // 创建查看按钮
+                        const viewButton = $('<a>').attr('href', exam.url)
+                            .text('查看试卷')
+                            .addClass('btn btn-sm btn-primary');
+
+                        // 将链接和按钮加入列表项
+                        listItem.append(examLink).append(viewButton);
+                    },
+                    error: function() {
+                        listItem.text('无法加载试卷内容').addClass('text-danger');
+                    }
+                });
+
+                // 将列表项加入列表
+                examList.append(listItem);
+            });
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -8,6 +8,7 @@
     <!-- 引入Bootstrap 5的CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
 </head>
 <body>
 
@@ -36,6 +37,8 @@
     </div>
 
     <!-- 选择知识点下拉菜单 -->
+    <hr>
+    <p>该功能未实现</p>
     <div class="mt-4">
         <h3>选择知识点进行修改：</h3>
         <select id="knowledge-point-select" class="form-select">
@@ -50,9 +53,16 @@
             <!-- 百分比选项将由JavaScript动态生成 -->
         </select>
     </div>
+    <hr>
 
     <div class="text-center mt-4">
         <button id="generate-paper" class="btn btn-primary">组卷</button>
+    </div>
+
+    <!-- 上传试卷按钮和结果展示 -->
+    <div class="text-center mt-4">
+        <button id="upload-paper" class="btn btn-success" style="display: none;">上传试卷</button>
+        <div id="upload-result" class="mt-3"></div>
     </div>
 
     <div id="questions" class="mt-5 border p-4 bg-light"></div>
@@ -63,6 +73,7 @@
 
 <script>
     let knowledgePointsData = [];
+    let generatedHtmlContent = '';  // 保存生成的试卷HTML
 
     // 获取知识点数据并生成知识点选择下拉菜单
     function loadKnowledgePoints() {
@@ -117,37 +128,6 @@
         }
     });
 
-    // 更新所选知识点的占比
-    document.getElementById('percentage-select').addEventListener('change', function() {
-        const selectedId = document.getElementById('knowledge-point-select').value;
-        const newPercentage = parseInt(this.value);
-
-        if (selectedId) {
-            // 更新数据
-            const selectedKnowledgePoint = knowledgePointsData.find(kp => kp.id === parseInt(selectedId));
-            const oldPercentage = selectedKnowledgePoint.percentage;
-            const totalPercentage = knowledgePointsData.reduce((sum, kp) => sum + kp.percentage, 0);
-
-            // 确保其他知识点占比调整
-            const difference = newPercentage - oldPercentage;
-            if (totalPercentage + difference <= 100) {
-                selectedKnowledgePoint.percentage = newPercentage;
-
-                // 更新其他知识点占比
-                let remainingPercentage = 100 - knowledgePointsData.reduce((sum, kp) => sum + kp.percentage, 0);
-                knowledgePointsData.forEach(kp => {
-                    if (kp.id !== parseInt(selectedId) && remainingPercentage > 0) {
-                        kp.percentage += remainingPercentage;
-                        remainingPercentage = 0;
-                    }
-                });
-            }
-
-            // 显示更新后的百分比
-            document.getElementById('selected-percentage').innerText = newPercentage;
-        }
-    });
-
     // 页面加载时获取知识点数据
     window.onload = loadKnowledgePoints;
 
@@ -175,11 +155,42 @@
         })
         .then(response => response.text())  // 接收HTML文本
         .then(html => {
-            // 将HTML内容直接插入到questions容器
-            document.getElementById('questions').innerHTML = html;
+            // 将HTML内容直接插入到questions容器，并保存内容
+            generatedHtmlContent = html;
+            document.getElementById('questions').innerHTML = generatedHtmlContent;
+
+            // 显示上传按钮
+            document.getElementById('upload-paper').style.display = 'block';
         })
         .catch(error => {
             console.error('Error:', error);
+        });
+    });
+
+    // 上传试卷的事件处理
+    document.getElementById('upload-paper').addEventListener('click', function() {
+        // 创建表单数据对象
+        const formData = new FormData();
+        const blob = new Blob([generatedHtmlContent], { type: 'text/html' });
+        formData.append('file', blob, 'generated_paper.html');
+
+        // 发送上传请求
+        fetch('/qb/upload/', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            const resultDiv = document.getElementById('upload-result');
+            if (data.success) {
+                resultDiv.innerHTML = `<div class="alert alert-success">上传成功！URL: <a href="${data.url}" target="_blank">${data.url}</a></div>`;
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-danger">上传失败！</div>`;
+            }
+        })
+        .catch(error => {
+            console.error('Error uploading file:', error);
+            document.getElementById('upload-result').innerHTML = `<div class="alert alert-danger">上传失败！</div>`;
         });
     });
 </script>

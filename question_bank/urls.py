@@ -12,5 +12,7 @@ urlpatterns = [
     path('qblist/',views.qblist,name='qblist'),
     path('zuzu/',views.zuzu,name='zuzu'),
     path('getk/',views.getk),
+    path('upload/',views.upload_html,name='upload_html'),
+    path('showtest/',views.showtest,name='showtest'),
 
 ]

@@ -5,21 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ec6edad-82ce-4659-a3dc-f568bd3565eb" name="更改" comment="sadd">
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/question-bank-system_django.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/upload/2024/10/14/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/upload/2024/10/14/image_TDkP91L.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/upload/2024/10/14/image_TDkP91L_thumb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/upload/2024/10/14/image_thumb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/uploads/1728911652.8479702.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/uploads/1728911748.2323327.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/uploads/1728911792.970386.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/uploads/1728911850.625497.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/uploads/generated_paper.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/question_bank/migrations/0008_testpaper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/question_bank/templates/showtest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/question_bank/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/question_bank/templates/qbindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank/templates/qbindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/question_bank/templates/qblist.html" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank/templates/qblist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/question_bank/templates/zuzu.html" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank/templates/zuzu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/question_bank/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/question_bank/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_bank/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" module-name="question-bank-system_django" is-module-sdk="true">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+    <option name="myUseModuleSdk" value="true" />
+    <option name="myModuleName" value="question-bank-system_django" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -52,18 +68,22 @@
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django 服务器.question-bank-system_django.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/33471/PycharmProjects/question_bank_system_django/static&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/33471/PycharmProjects/question-bank-system_django/manage.py&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.python.django.customization.DjangoModulesConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -76,9 +96,10 @@
       <recent name="C:\Users\33471\PycharmProjects\question_bank_system_django\static\ckeditor5" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="question_bank_system_django" type="Python.DjangoServer" factoryName="Django server">
-      <module name="question_bank_system_django" />
+  <component name="RunManager" selected="Django 服务器.question-bank-system_django">
+    <configuration name="question-bank-system_django" type="Python.DjangoServer" factoryName="Django server">
+      <module name="question-bank-system_django" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -87,6 +108,32 @@
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="localhost" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="question_bank_system_django" type="Python.DjangoServer" factoryName="Django server">
+      <module name="question_bank_system_django" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="question_bank_system_django.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.11 (question-bank-system_django)" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\33471\PycharmProjects\question-bank-system_django" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -101,6 +148,14 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23339.19" />
+        <option value="bundled-python-sdk-0029f7779945-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23339.19" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -154,8 +209,11 @@
       <workItem from="1728526019705" duration="145000" />
       <workItem from="1728604740258" duration="3117000" />
       <workItem from="1728608452082" duration="747000" />
-      <workItem from="1728645843915" duration="8316000" />
-      <workItem from="1728864675860" duration="4602000" />
+      <workItem from="1728645843915" duration="7389000" />
+      <workItem from="1728905214244" duration="734000" />
+      <workItem from="1728905960720" duration="487000" />
+      <workItem from="1728906457748" duration="88000" />
+      <workItem from="1728906563096" duration="5056000" />
     </task>
     <task id="LOCAL-00001" summary="初始配置">
       <option name="closed" value="true" />
@@ -357,15 +415,7 @@
       <option name="project" value="LOCAL" />
       <updated>1720960576058</updated>
     </task>
-    <task id="LOCAL-00026" summary="sadd">
-      <option name="closed" value="true" />
-      <created>1728653663876</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1728653663876</updated>
-    </task>
-    <option name="localTasksCounter" value="27" />
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -31,3 +31,6 @@ class Question(models.Model):
     ans = models.TextField(verbose_name="答案")
     anss = models.TextField(verbose_name="解析")
 
+class TestPaper(models.Model):
+    url = models.TextField(verbose_name="试卷url")
+
